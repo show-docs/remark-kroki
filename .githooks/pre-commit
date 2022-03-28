@@ -1,0 +1,4 @@
+#!/bin/sh
+
+npm run lint:staged
+npm test
