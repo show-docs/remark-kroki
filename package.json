@@ -1,6 +1,6 @@
 {
   "name": "remark-kroki",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
   "author": {
     "name": "Eric Chen",
@@ -44,17 +44,17 @@
     "unist-util-visit": "^2.0.3"
   },
   "devDependencies": {
-    "@nice-move/cli": "^0.7.1",
-    "@nice-move/eslint-config-base": "^0.6.4",
+    "@nice-move/cli": "^0.7.2",
+    "@nice-move/eslint-config-base": "^0.6.8",
     "@nice-move/prettier-config": "^0.5.4",
-    "ava": "^4.1.0",
-    "eslint": "^8.12.0",
+    "ava": "^4.2.0",
+    "eslint": "^8.14.0",
     "eslint-plugin-ava": "^13.2.0",
-    "garou": "^0.4.4",
-    "prettier": "^2.6.1",
+    "garou": "^0.4.6",
+    "prettier": "^2.6.2",
     "remark": "^13.0.0",
     "svgo": "^2.8.0",
-    "svgo-config": "^0.4.0"
+    "svgo-config": "^0.4.1"
   },
   "engines": {
     "node": "^14.17.0 || >=16.13.0"

@@ -27,7 +27,10 @@ const markdownText = readFileSync('example.md', 'utf8');
 
 remark()
   .use(kroki, {
-    server: 'http://localhost:8000'
+    server: 'http://localhost:8000',
+    headers: {
+      // if needed, for custom authentication
+    }
   })
   .process(markdownText)
   .then((file) => console.info(file))
