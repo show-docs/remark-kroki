@@ -1,5 +1,7 @@
 # remark-kroki
 
+Kroki plugin of remark.
+
 [![npm][npm-badge]][npm-url]
 [![github][github-badge]][github-url]
 ![node][node-badge]
@@ -18,19 +20,18 @@ npm install remark-kroki --save-dev
 
 ## Usage
 
-```cjs
-const readFileSync = require('fs');
-const remark = require('remark');
-const kroki = require('remark-kroki');
+```mjs
+import readFileSync from 'fs';
+
+import { remark } from 'remark';
+import { remarkKroki } from 'remark-kroki';
 
 const markdownText = readFileSync('example.md', 'utf8');
 
 remark()
-  .use(kroki, {
+  .use(remarkKroki, {
     server: 'http://localhost:8000',
-    headers: {
-      // if needed, for custom authentication
-    }
+    alias: ['plantuml']
   })
   .process(markdownText)
   .then((file) => console.info(file))
@@ -45,6 +46,18 @@ remark()
 - default: http://localhost:8000
 
 Using self host server by default. Set `https://kroki.io` to use free service.
+
+### Options.headers
+
+- type: object
+
+HTTP headers to send to the server for custom authentication.
+
+### Options.alias
+
+- type: array
+
+Alias code language name to treat as kroki code block, meta.type will be ignored.
 
 ## Syntax
 

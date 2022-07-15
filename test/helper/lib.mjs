@@ -1,10 +1,10 @@
-import remark from 'remark';
+import { remark } from 'remark';
 
-import Plugin from '../../lib/index.cjs';
+import { remarkKroki } from '../../lib/index.mjs';
 
 export function transform(input, option = {}) {
   return remark()
-    .use(Plugin, option)
+    .use(remarkKroki, option)
     .process(input)
     .then((file) => file.toString());
 }

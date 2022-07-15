@@ -78,3 +78,20 @@ test('okay', async (t) => {
 
   t.true(output.trim().startsWith(expected.trim()));
 });
+
+test('alias', async (t) => {
+  const input = `
+\`\`\`plantuml type=mermaid alt=abc
+  A --> B
+\`\`\`
+`;
+
+  const expected = '![abc](data:image/svg+xml;base64,PD94bWwgdmVyc2lv';
+
+  const output = await transform(input, {
+    server: 'https://kroki.io',
+    alias: ['plantuml'],
+  });
+
+  t.true(output.trim().startsWith(expected.trim()));
+});

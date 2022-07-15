@@ -31,3 +31,15 @@ test('headers', (t) => {
     message: '`headers` should an object of string',
   });
 });
+
+test('alias', (t) => {
+  t.throws(() => transform('', { alias: true }), {
+    instanceOf: TypeError,
+    message: '`alias` should be an array',
+  });
+
+  t.throws(() => transform('', { alias: [' '] }), {
+    instanceOf: TypeError,
+    message: '`alias` should an array of non empty string',
+  });
+});

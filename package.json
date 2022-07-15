@@ -1,6 +1,7 @@
 {
   "name": "remark-kroki",
-  "version": "0.1.0",
+  "version": "0.2.0",
+  "description": "Kroki plugin of remark",
   "license": "MIT",
   "author": {
     "name": "Eric Chen",
@@ -28,36 +29,38 @@
   "bugs": {
     "url": "https://github.com/nice-move/remark-kroki/issues"
   },
-  "main": "lib/index.cjs",
+  "main": "lib/index.mjs",
   "files": [
     "lib"
   ],
+  "type": "module",
   "scripts": {
     "lint:staged": "nice-move lint staged",
-    "prepare": "git config core.hooksPath .githooks",
+    "prepare": "nice-move git hooks",
     "prepublishOnly": "npm run lint:staged && npm test",
     "test": "ava --fail-fast"
   },
   "dependencies": {
-    "node-fetch": "^3.2.3",
-    "p-memoize": "^4.0.4",
-    "unist-util-visit": "^2.0.3"
+    "node-fetch": "^3.2.8",
+    "p-memoize": "^7.1.0",
+    "unist-util-visit": "^4.1.0"
   },
   "devDependencies": {
-    "@nice-move/cli": "^0.7.2",
-    "@nice-move/eslint-config-base": "^0.6.8",
-    "@nice-move/prettier-config": "^0.5.4",
-    "ava": "^4.2.0",
-    "eslint": "^8.14.0",
+    "@bring-it/npm": "^0.0.1",
+    "@nice-move/cli": "^0.9.6",
+    "@nice-move/eslint-config-base": "^0.7.4",
+    "@nice-move/prettier-config": "^0.6.0",
+    "ava": "^4.3.1",
+    "eslint": "^8.19.0",
     "eslint-plugin-ava": "^13.2.0",
-    "garou": "^0.4.6",
-    "prettier": "^2.6.2",
-    "remark": "^13.0.0",
+    "garou": "^0.4.14",
+    "prettier": "^2.7.1",
+    "remark": "^14.0.2",
     "svgo": "^2.8.0",
     "svgo-config": "^0.4.1"
   },
   "engines": {
-    "node": "^14.17.0 || >=16.13.0"
+    "node": "^16.13.0 || >=18.0.0"
   },
   "publishConfig": {
     "access": "public",
