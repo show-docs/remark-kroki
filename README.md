@@ -88,3 +88,4 @@ Into
 ## Related
 
 - [remark-code-example](https://github.com/nice-move/remark-code-example)
+- [markdown-code-block-meta](https://github.com/nice-move/markdown-code-block-meta)

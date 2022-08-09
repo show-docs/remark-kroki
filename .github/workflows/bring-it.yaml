@@ -8,7 +8,6 @@ on:
 jobs:
   test:
     strategy:
-      max-parallel: 5
       matrix:
         os:
           - macos-latest
@@ -17,35 +16,22 @@ jobs:
         node:
           - 18.0.0
           - 16.13.0
-        include:
+        exclude:
           - os: ubuntu-latest
             node: 16.13.0
-            publish: true
+
     runs-on: ${{ matrix.os }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 2
-
-      - name: Setup node
-        uses: actions/setup-node@v3
+      - name: Run
+        uses: airkro/bring-it@actions
         with:
           node-version: ${{ matrix.node }}
-          registry-url: https://registry.npmjs.org
-          cache: npm
 
-      - name: Prepare
-        run: npm install npm -g
-
-      - name: Install
-        run: npm ci
-
-      - name: Test
-        run: npm test
-
-      - name: Publish
-        if: ${{ matrix.publish }}
-        run: npm exec bring-it npm
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+  publish:
+    needs: [test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run
+        uses: airkro/bring-it@actions
+        with:
+          npm-token: ${{ secrets.NPM_TOKEN }}

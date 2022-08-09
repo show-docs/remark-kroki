@@ -1,6 +1,6 @@
 {
   "name": "remark-kroki",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "Kroki plugin of remark",
   "license": "MIT",
   "author": {
@@ -38,22 +38,23 @@
     "lint:staged": "nice-move lint staged",
     "prepare": "nice-move git hooks",
     "prepublishOnly": "npm run lint:staged && npm test",
-    "test": "ava --fail-fast"
+    "test": "ava --fail-fast --timeout 20s"
   },
   "dependencies": {
-    "node-fetch": "^3.2.8",
+    "markdown-code-block-meta": "^0.0.2",
+    "node-fetch": "^3.2.10",
     "p-memoize": "^7.1.0",
     "unist-util-visit": "^4.1.0"
   },
   "devDependencies": {
-    "@bring-it/npm": "^0.0.1",
-    "@nice-move/cli": "^0.9.6",
-    "@nice-move/eslint-config-base": "^0.7.4",
-    "@nice-move/prettier-config": "^0.6.0",
+    "@bring-it/npm": "^0.0.3",
+    "@nice-move/cli": "^0.9.8",
+    "@nice-move/eslint-config-base": "^0.8.5",
+    "@nice-move/prettier-config": "^0.7.1",
     "ava": "^4.3.1",
-    "eslint": "^8.19.0",
+    "eslint": "^8.21.0",
     "eslint-plugin-ava": "^13.2.0",
-    "garou": "^0.4.14",
+    "garou": "^0.5.0",
     "prettier": "^2.7.1",
     "remark": "^14.0.2",
     "svgo": "^2.8.0",

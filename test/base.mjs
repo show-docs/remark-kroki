@@ -51,13 +51,13 @@ ss
 
 test('fail:server', async (t) => {
   const input = `
-\`\`\`kroki type=plantuml alt=00
+\`\`\`kroki type=plantuml alt="0 0"
 ss
 \`\`\`
 `;
 
   const expected = `
-![00](${base64Url(base64)})
+![0 0](${base64Url(base64)})
 `;
 
   const output = await transform(input);
