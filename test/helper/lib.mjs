@@ -11,8 +11,8 @@ export function transform(input, option = {}) {
 
 export function getUtils(t) {
   return {
-    sameText(actul, expected) {
-      t.is(actul.trim(), expected.trim());
+    sameText(actual, expected) {
+      t.is(actual.trim(), expected.trim());
     },
   };
 }

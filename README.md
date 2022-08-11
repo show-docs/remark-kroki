@@ -56,6 +56,7 @@ HTTP headers to send to the server for custom authentication.
 ### Options.alias
 
 - type: array
+- example: ['plantuml']
 
 Alias code language name to treat as kroki code block, meta.type will be ignored.
 
@@ -85,7 +86,18 @@ Into
 ![abc](data:image/svg+xml;base64,xxxxxxxx)
 ````
 
+### Alias
+
+````
+```kroki type=plantuml
+```
+ ↓
+```plantuml
+```
+````
+
 ## Related
 
-- [remark-code-example](https://github.com/nice-move/remark-code-example)
 - [markdown-code-block-meta](https://github.com/nice-move/markdown-code-block-meta)
+- [remark-code-example](https://github.com/nice-move/remark-code-example)
+- [remark-docusaurus](https://github.com/nice-move/remark-docusaurus)

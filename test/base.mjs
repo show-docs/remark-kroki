@@ -5,7 +5,7 @@ import test from 'ava';
 
 import { getUtils, transform } from './helper/lib.mjs';
 
-test('emtpy', async (t) => {
+test('empty', async (t) => {
   const input = `
 \`\`\`kroki
 \`\`\`
@@ -31,7 +31,11 @@ function base64Url(base64) {
   return `data:image/svg+xml;base64,${base64}`;
 }
 
-const base64 = readFileSync('lib/fail.svg').toString('base64');
+const fail = (msg) => {
+  const str = readFileSync('lib/fail.svg', 'utf8').replace('======', msg);
+
+  return Buffer.from(str).toString('base64');
+};
 
 test('fail:input', async (t) => {
   const input = `
@@ -41,7 +45,7 @@ ss
 `;
 
   const expected = `
-![00](${base64Url(base64)})
+![00](${base64Url(fail('Error 400: Syntax Error? (line: 1)'))})
 `;
 
   const output = await transform(input, { server: 'https://kroki.io' });
@@ -57,12 +61,18 @@ ss
 `;
 
   const expected = `
-![0 0](${base64Url(base64)})
+![0 0](${base64Url(
+    fail(
+      'Error: request to http://localhost:8000/plantuml/svg failed, reason: connect ECONNREFUSED 127.0.0.1:',
+    ),
+  )})
 `;
 
   const output = await transform(input);
 
-  getUtils(t).sameText(output, expected);
+  t.is(output.trim().slice(0, 400), expected.trim().slice(0, 400));
+
+  t.not(output, expected);
 });
 
 test('okay', async (t) => {
