@@ -1,11 +1,12 @@
 # remark-kroki
 
-Remark plugin for showing Kroki diagram.
+Remark plugin for showing [Kroki] diagram.
 
 [![npm][npm-badge]][npm-url]
 [![github][github-badge]][github-url]
 ![node][node-badge]
 
+[kroki]: https://kroki.io
 [npm-url]: https://www.npmjs.com/package/remark-kroki
 [npm-badge]: https://img.shields.io/npm/v/remark-kroki.svg?style=flat-square&logo=npm
 [github-url]: https://github.com/nice-move/remark-kroki
@@ -36,6 +37,26 @@ remark()
   .process(markdownText)
   .then((file) => console.info(file))
   .catch((error) => console.warn(error));
+```
+
+### Docusaurus project
+
+```cjs
+// docusaurus.config.js
+module.exports = async function createConfig() {
+  const { remarkKroki } = await import('mdx-mermaid');
+
+  return {
+    presets: [
+      [
+        'classic',
+        {
+          docs: { remarkPlugins: [remarkKroki] }
+        }
+      ]
+    ]
+  };
+};
 ```
 
 ## Options

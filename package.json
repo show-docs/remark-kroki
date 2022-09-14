@@ -1,6 +1,6 @@
 {
   "name": "remark-kroki",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Remark plugin for showing Kroki diagram",
   "license": "MIT",
   "author": {
@@ -8,17 +8,24 @@
     "email": "airkro@qq.com"
   },
   "keywords": [
+    "blockdiag",
+    "bytefield",
     "code-block",
     "diagram",
     "doc",
     "document",
     "documentation",
     "docusaurus",
+    "graphViz",
     "kroki",
     "markdown",
+    "mermaid",
+    "nomnoml",
+    "plantuml",
     "remark",
     "remark-plugin",
-    "site-generator"
+    "site-generator",
+    "vega"
   ],
   "homepage": "https://github.com/nice-move/remark-kroki",
   "repository": {
