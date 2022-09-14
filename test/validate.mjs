@@ -1,45 +1,39 @@
-// eslint-disable-next-line import/no-unresolved
 import test from 'ava';
 
 import { transform } from './helper/lib.mjs';
 
-test('server', (t) => {
-  t.throws(() => transform('', { server: 1 }), {
-    instanceOf: TypeError,
-    message: '`server` should be string',
-  });
+function marco(t, ...configs) {
+  for (const config of configs) {
+    const error = t.throws(() => transform('', config), {
+      instanceOf: TypeError,
+    });
 
-  t.throws(() => transform('', { server: '55' }), {
-    instanceOf: TypeError,
-    message: '`server` should be URL',
-  });
+    t.snapshot(error);
+  }
+}
 
-  t.throws(() => transform('', { server: 'ftp://localhost' }), {
-    instanceOf: TypeError,
-    message: '`server` protocol should be http or https',
-  });
-});
+test(
+  'server',
+  marco,
+  { server: 1 },
+  { server: '55' },
+  { server: 'ftp://localhost' },
+);
 
-test('headers', (t) => {
-  t.throws(() => transform('', { headers: true }), {
-    instanceOf: TypeError,
-    message: '`headers` should be object',
-  });
+test(
+  'headers',
+  marco,
+  { headers: true },
+  { headers: [] },
+  { headers: null },
+  { headers: { a: 0 } },
+);
 
-  t.throws(() => transform('', { headers: { a: 0 } }), {
-    instanceOf: TypeError,
-    message: '`headers` should object of string',
-  });
-});
-
-test('alias', (t) => {
-  t.throws(() => transform('', { alias: true }), {
-    instanceOf: TypeError,
-    message: '`alias` should be array',
-  });
-
-  t.throws(() => transform('', { alias: [' '] }), {
-    instanceOf: TypeError,
-    message: '`alias` should array of non empty string',
-  });
-});
+test(
+  'alias',
+  marco,
+  { alias: true },
+  { alias: null },
+  { alias: [''] },
+  { alias: [' '] },
+);

@@ -21,7 +21,7 @@ npm install remark-kroki --save-dev
 ## Usage
 
 ```mjs
-import readFileSync from 'fs';
+import readFileSync from 'node:fs';
 
 import { remark } from 'remark';
 import { remarkKroki } from 'remark-kroki';
@@ -56,7 +56,7 @@ HTTP headers to send to the server for custom authentication.
 ### Options.alias
 
 - type: array
-- example: ['plantuml']
+- example: `['plantuml']`
 
 Alias code language name to treat as kroki code block, meta.type will be ignored.
 
