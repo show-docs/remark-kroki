@@ -37,3 +37,12 @@ test(
   { alias: [''] },
   { alias: [' '] },
 );
+
+test(
+  'output',
+  marco,
+  { output: true },
+  { output: null },
+  { output: '' },
+  { output: 'any' },
+);
