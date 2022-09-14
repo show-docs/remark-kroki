@@ -1,6 +1,6 @@
 # remark-kroki
 
-Kroki plugin of remark.
+Remark plugin for showing Kroki diagram.
 
 [![npm][npm-badge]][npm-url]
 [![github][github-badge]][github-url]

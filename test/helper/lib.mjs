@@ -8,3 +8,9 @@ export function transform(input, option = {}) {
     .process(input)
     .then((file) => file.toString());
 }
+
+export async function macro(t, input, options) {
+  const output = await transform(input, options);
+
+  t.snapshot(output.trim());
+}

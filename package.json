@@ -1,7 +1,7 @@
 {
   "name": "remark-kroki",
   "version": "0.2.4",
-  "description": "Kroki plugin of remark",
+  "description": "Remark plugin for showing Kroki diagram",
   "license": "MIT",
   "author": {
     "name": "Eric Chen",
@@ -18,7 +18,6 @@
     "markdown",
     "remark",
     "remark-plugin",
-    "remarkjs",
     "site-generator"
   ],
   "homepage": "https://github.com/nice-move/remark-kroki",
@@ -38,7 +37,7 @@
     "lint:staged": "nice-move lint staged",
     "prepare": "nice-move git hooks",
     "prepublishOnly": "npm run lint:staged && npm test",
-    "test": "ava --fail-fast --timeout 20s"
+    "test": "ava --fail-fast -T 20s"
   },
   "dependencies": {
     "is-plain-obj": "^4.1.0",

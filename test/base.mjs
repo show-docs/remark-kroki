@@ -1,12 +1,6 @@
 import test from 'ava';
 
-import { transform } from './helper/lib.mjs';
-
-async function macro(t, input, options) {
-  const output = await transform(input, options);
-
-  t.snapshot(output.trim());
-}
+import { macro } from './helper/lib.mjs';
 
 test(
   'empty',
@@ -16,27 +10,6 @@ test(
 \`\`\`
 
 \`\`\`kroki type=plantuml
-\`\`\`
-`,
-);
-
-test(
-  'fail:input',
-  macro,
-  `
-\`\`\`kroki type=plantuml alt=00
-ss
-\`\`\`
-`,
-  { server: 'https://kroki.io' },
-);
-
-test(
-  'fail:server',
-  macro,
-  `
-\`\`\`kroki type=plantuml alt="0 0"
-ss
 \`\`\`
 `,
 );
