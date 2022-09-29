@@ -44,7 +44,7 @@ remark()
 ```cjs
 // docusaurus.config.js
 module.exports = async function createConfig() {
-  const { remarkKroki } = await import('mdx-mermaid');
+  const { remarkKroki } = await import('remark-kroki');
 
   return {
     presets: [
@@ -65,12 +65,14 @@ module.exports = async function createConfig() {
 
 - type: string
 - default: http://localhost:8000
+- example: <https://kroki.io>
 
-Using self host server by default. Set `https://kroki.io` to use free service.
+Using self host server by default. Set <https://kroki.io> to use free service.
 
 ### Options.headers
 
 - type: object
+- default: `{}`
 
 HTTP headers to send to the server for custom authentication.
 
