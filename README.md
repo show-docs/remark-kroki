@@ -51,7 +51,17 @@ module.exports = async function createConfig() {
       [
         'classic',
         {
-          docs: { remarkPlugins: [remarkKroki] }
+          docs: {
+            remarkPlugins: [
+              [
+                remarkKroki,
+                {
+                  // ...options here
+                  alias: ['plantuml']
+                }
+              ]
+            ]
+          }
         }
       ]
     ]
