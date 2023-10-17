@@ -14,11 +14,12 @@ jobs:
           - windows-latest
           - ubuntu-latest
         node:
-          - 18.0.0
-          - 16.15.0
+          - current
+          - lts/*
+          - lts/-1
         exclude:
           - os: ubuntu-latest
-            node: 16.15.0
+            node: lts/*
 
     runs-on: ${{ matrix.os }}
     steps:

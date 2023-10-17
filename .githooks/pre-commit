@@ -1,4 +1,4 @@
 #!/bin/sh
 
-npm run lint:staged
-npm test
+pnpm run lint:staged
+pnpm test

@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { macro } from './helper/lib.mjs';
+import { macro2 as macro } from './helper/lib.mjs';
 
 test(
   'input',

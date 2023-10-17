@@ -1,6 +1,6 @@
 {
   "name": "remark-kroki",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "Remark plugin for showing Kroki diagram",
   "license": "MIT",
   "author": {
@@ -24,6 +24,7 @@
     "plantuml",
     "remark",
     "remark-plugin",
+    "remarkjs",
     "site-generator",
     "vega"
   ],
@@ -43,28 +44,28 @@
   "scripts": {
     "lint:staged": "nice-move lint staged",
     "prepare": "nice-move git hooks",
-    "prepublishOnly": "npm run lint:staged && npm test",
-    "snapshot": "ava --fail-fast -u -T 20s",
-    "test": "ava --fail-fast -T 20s"
+    "prepublishOnly": "pnpm run lint:staged && pnpm test",
+    "snapshot": "ava --fail-fast -u",
+    "test": "ava --fail-fast"
   },
   "dependencies": {
     "is-plain-obj": "^4.1.0",
     "markdown-code-block-meta": "^0.0.2",
-    "node-fetch": "^3.3.1",
+    "node-fetch": "^3.3.2",
     "p-memoize": "^7.1.1",
-    "unist-util-visit": "^4.1.2"
+    "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
-    "@bring-it/npm": "^0.1.1",
-    "@nice-move/cli": "^0.10.8",
-    "@nice-move/eslint-config-base": "^0.9.11",
-    "@nice-move/prettier-config": "^0.8.1",
-    "ava": "^5.2.0",
-    "eslint": "^8.40.0",
+    "@bring-it/npm": "^0.3.5",
+    "@nice-move/cli": "^0.10.13",
+    "@nice-move/eslint-config-base": "^0.9.22",
+    "@nice-move/prettier-config": "^0.9.6",
+    "ava": "^5.3.1",
+    "eslint": "^8.51.0",
     "eslint-plugin-ava": "^14.0.0",
-    "garou": "^0.6.8",
-    "prettier": "^2.8.8",
-    "remark": "^14.0.3",
+    "garou": "^0.6.17",
+    "prettier": "^3.0.3",
+    "remark": "^15.0.1",
     "svgo": "^3.0.2",
     "svgo-config": "^0.5.0"
   },
@@ -75,13 +76,12 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+  "packageManager": "pnpm@8.8.0",
   "eslintConfig": {
     "extends": "@nice-move/eslint-config-base"
   },
   "nice-move": {
-    "import-groups": [
-      "nice-move-preset"
-    ]
+    "import-groups": "nice-move-preset"
   },
   "prettier": "@nice-move/prettier-config"
 }

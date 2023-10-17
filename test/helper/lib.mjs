@@ -14,3 +14,9 @@ export async function macro(t, input, options) {
 
   t.snapshot(output.trim());
 }
+
+export async function macro2(t, input, options) {
+  const output = await transform(input, options);
+
+  t.snapshot(output.trim().slice(0, 4000));
+}
