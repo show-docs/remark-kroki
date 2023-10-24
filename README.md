@@ -98,7 +98,7 @@ Alias code language name to treat as kroki code block, meta.type will be ignored
 
 - type: string
 - default: `'img-base64'`
-- enum: `['inline-svg', 'img-base64', 'object-base64']`
+- enum: `['inline-svg', 'img-base64', 'img-html-base64', 'object-base64']`
 
 How to embed SVG as image. See the different and risk on [Best Way To Embed SVG](https://vecta.io/blog/best-way-to-embed-svg).
 
