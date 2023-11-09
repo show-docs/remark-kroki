@@ -1,22 +1,43 @@
 import { remark } from 'remark';
+import { removePosition } from 'unist-util-remove-position';
 
 import { remarkKroki } from '../../lib/index.mjs';
 
-export function transform(input, option = {}) {
-  return remark()
-    .use(remarkKroki, option)
+function removePST(ast) {
+  removePosition(ast, { force: true });
+
+  return ast.children;
+}
+
+export async function transform(input, option = {}) {
+  const instance = remark().use(remarkKroki, option);
+
+  const ast = instance.parse(input);
+
+  return {
+    output: await instance
+      .process(input)
+      .then((file) => file.toString().trim()),
+    tree: removePST(await instance.run(ast)),
+    ast: removePST(ast),
+  };
+}
+
+export async function TransformSnapshot(t, input, option = {}, slice = false) {
+  const instance = remark().use(remarkKroki, option);
+
+  const ast = instance.parse(input);
+
+  t.snapshot(input);
+  t.snapshot(removePST(ast));
+
+  const tree = removePST(await instance.run(ast));
+
+  t.snapshot(tree);
+
+  const output = await instance
     .process(input)
-    .then((file) => file.toString());
-}
-
-export async function macro(t, input, options) {
-  const output = await transform(input, options);
-
-  t.snapshot(output.trim());
-}
-
-export async function macro2(t, input, options) {
-  const output = await transform(input, options);
-
-  t.snapshot(output.trim().slice(0, 4000));
+    .then((file) => file.toString().trim())
+    .then((text) => (slice ? text.slice(0, 4000) : text));
+  t.snapshot(output);
 }

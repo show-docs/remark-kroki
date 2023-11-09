@@ -1,19 +1,26 @@
 import test from 'ava';
 
-import { macro } from './helper/lib.mjs';
+import { TransformSnapshot } from './helper/lib.mjs';
 
-const server = 'https://kroki.io';
+function macro(t, { output }) {
+  return TransformSnapshot(
+    t,
+    `
+  \`\`\`kroki type=plantuml
+    A --> B
+  \`\`\`
+  `,
+    {
+      server: 'https://kroki.io',
+      output,
+    },
+  );
+}
 
-const input = `
-\`\`\`kroki type=plantuml
-  A --> B
-\`\`\`
-`;
+test('inline-svg', macro, { output: 'inline-svg' });
 
-test('inline-svg', macro, input, { server, output: 'inline-svg' });
+test('img-base64', macro, { output: 'img-base64' });
 
-test('img-base64', macro, input, { server, output: 'img-base64' });
+test('img-html-base64', macro, { output: 'img-html-base64' });
 
-test('img-html-base64', macro, input, { server, output: 'img-html-base64' });
-
-test('object-base64', macro, input, { server, output: 'object-base64' });
+test('object-base64', macro, { output: 'object-base64' });

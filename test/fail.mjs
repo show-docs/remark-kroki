@@ -1,35 +1,38 @@
 import test from 'ava';
 
-import { macro2 as macro } from './helper/lib.mjs';
+import { TransformSnapshot } from './helper/lib.mjs';
 
 test(
   'input',
-  macro,
+  TransformSnapshot,
   `
 \`\`\`kroki type=plantuml alt=00
 ss
 \`\`\`
 `,
   { server: 'https://kroki.io' },
+  false,
 );
 
 test(
   '404',
-  macro,
+  TransformSnapshot,
   `
 \`\`\`kroki type=fake
 ss
 \`\`\`
 `,
   { server: 'https://kroki.io' },
+  false,
 );
 
 test(
   'timeout',
-  macro,
+  TransformSnapshot,
   `
 \`\`\`kroki type=plantuml alt="0 0"
 ss
 \`\`\`
 `,
+  false,
 );

@@ -1,10 +1,10 @@
 import test from 'ava';
 
-import { macro } from './helper/lib.mjs';
+import { TransformSnapshot } from './helper/lib.mjs';
 
 test(
   'empty',
-  macro,
+  TransformSnapshot,
   `
 \`\`\`kroki
 \`\`\`
@@ -16,7 +16,7 @@ test(
 
 test(
   'okay',
-  macro,
+  TransformSnapshot,
   `
 \`\`\`kroki type=plantuml alt=abc
   A --> B
@@ -27,7 +27,7 @@ test(
 
 test(
   'alias',
-  macro,
+  TransformSnapshot,
   `
 \`\`\`plantuml type=mermaid alt=abc
   A --> B

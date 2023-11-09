@@ -2,9 +2,9 @@ import test from 'ava';
 
 import { transform } from './helper/lib.mjs';
 
-function marco(t, ...configs) {
+async function marco(t, ...configs) {
   for (const config of configs) {
-    const error = t.throws(() => transform('', config), {
+    const error = await t.throwsAsync(transform('', config), {
       instanceOf: TypeError,
     });
 
