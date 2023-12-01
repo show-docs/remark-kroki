@@ -1,6 +1,6 @@
 {
   "name": "remark-kroki",
-  "version": "0.2.12",
+  "version": "0.3.0",
   "description": "Remark plugin for showing Kroki diagram",
   "license": "MIT",
   "author": {
@@ -66,6 +66,7 @@
     "garou": "^0.6.19",
     "prettier": "^3.1.0",
     "remark": "^15.0.1",
+    "remark-mdx": "^3.0.0",
     "unist-util-remove-position": "^5.0.0"
   },
   "engines": {
@@ -75,7 +76,7 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "packageManager": "pnpm@8.10.5",
+  "packageManager": "pnpm@8.11.0",
   "eslintConfig": {
     "extends": "@nice-move/eslint-config-base"
   },

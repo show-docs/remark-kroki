@@ -46,3 +46,12 @@ test(
   { output: '' },
   { output: 'any' },
 );
+
+test(
+  'target',
+  marco,
+  { target: true },
+  { target: null },
+  { target: '' },
+  { target: 'any' },
+);
