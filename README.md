@@ -123,6 +123,15 @@ HTTP headers to send to the server for custom authentication.
 
 Alias code language name to treat as kroki code block, meta.type will be ignored.
 
+````
+```kroki type=plantuml
+```
+↓
+
+```plantuml
+```
+````
+
 ### Options.target
 
 - type: string
@@ -163,16 +172,6 @@ Turn
 Into
 
 ![abc](data:image/svg+xml;base64,xxxxxxxx)
-````
-
-### Alias
-
-````
-```kroki type=plantuml
-```
- ↓
-```plantuml
-```
 ````
 
 ## Troubleshooting

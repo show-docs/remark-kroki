@@ -7,7 +7,7 @@ test.before((t) => {
 });
 
 const source = `
-\`\`\`kroki type=plantuml
+\`\`\`kroki type=plantuml width=50%
   A --> B
 \`\`\`
 `;
