@@ -1,6 +1,6 @@
 {
   "name": "remark-kroki",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Remark plugin for showing Kroki diagram",
   "license": "MIT",
   "author": {
@@ -50,20 +50,21 @@
   },
   "dependencies": {
     "is-plain-obj": "^4.1.0",
+    "kebab-case": "^1.0.2",
     "markdown-code-block-meta": "^0.0.2",
     "node-fetch": "^3.3.2",
     "p-memoize": "^7.1.1",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
-    "@bring-it/npm": "^0.5.1",
+    "@bring-it/npm": "^0.5.2",
     "@nice-move/cli": "^0.11.3",
     "@nice-move/eslint-config-base": "^0.11.1",
     "@nice-move/prettier-config": "^0.10.0",
-    "ava": "^6.1.1",
-    "eslint": "^8.56.0",
+    "ava": "^6.1.2",
+    "eslint": "^8.57.0",
     "eslint-plugin-ava": "^14.0.0",
-    "garou": "^0.7.0",
+    "garou": "^0.7.1",
     "prettier": "^3.2.5",
     "remark": "^15.0.1",
     "remark-mdx": "^3.0.1",
