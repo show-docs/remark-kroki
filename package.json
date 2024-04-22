@@ -1,6 +1,6 @@
 {
   "name": "remark-kroki",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "description": "Remark plugin for showing Kroki diagram",
   "license": "MIT",
   "author": {
@@ -28,13 +28,13 @@
     "site-generator",
     "vega"
   ],
-  "homepage": "https://github.com/nice-move/remark-kroki",
+  "homepage": "https://github.com/show-docs/remark-kroki",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nice-move/remark-kroki.git"
+    "url": "https://github.com/show-docs/remark-kroki.git"
   },
   "bugs": {
-    "url": "https://github.com/nice-move/remark-kroki/issues"
+    "url": "https://github.com/show-docs/remark-kroki/issues"
   },
   "main": "lib/index.mjs",
   "files": [
@@ -58,18 +58,19 @@
   },
   "devDependencies": {
     "@bring-it/npm": "^0.5.2",
-    "@nice-move/cli": "^0.11.3",
-    "@nice-move/eslint-config-base": "^0.11.1",
-    "@nice-move/prettier-config": "^0.10.0",
+    "@nice-move/cli": "^0.11.10",
+    "@nice-move/eslint-config-base": "^0.11.4",
+    "@nice-move/prettier-config": "^0.11.3",
     "ava": "^6.1.2",
     "eslint": "^8.57.0",
     "eslint-plugin-ava": "^14.0.0",
-    "garou": "^0.7.1",
+    "garou": "^0.7.3",
     "prettier": "^3.2.5",
     "remark": "^15.0.1",
     "remark-mdx": "^3.0.1",
     "unist-util-remove-position": "^5.0.0"
   },
+  "packageManager": "pnpm@9.0.5",
   "engines": {
     "node": ">=18.0.0 || ^16.13.0"
   },
@@ -77,7 +78,6 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "packageManager": "pnpm@8.15.3",
   "eslintConfig": {
     "extends": "@nice-move/eslint-config-base"
   },
