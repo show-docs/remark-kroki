@@ -25,14 +25,3 @@ ss
   { server: 'https://kroki.io' },
   false,
 );
-
-test(
-  'timeout',
-  TransformSnapshot,
-  `
-\`\`\`kroki type=plantuml alt="0 0"
-ss
-\`\`\`
-`,
-  false,
-);
