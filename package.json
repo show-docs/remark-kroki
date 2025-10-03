@@ -1,6 +1,6 @@
 {
   "name": "remark-kroki",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "description": "Remark plugin for showing Kroki diagram",
   "license": "MIT",
   "author": {
