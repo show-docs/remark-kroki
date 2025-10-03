@@ -42,6 +42,7 @@
   "type": "module",
   "scripts": {
     "lint:staged": "nice-move lint staged",
+    "lint:type": "tsc -p tsconfig.json",
     "prepare": "nice-move git hooks",
     "prepublishOnly": "pnpm run lint:staged && pnpm test",
     "snapshot": "ava --fail-fast -u",
@@ -58,6 +59,7 @@
   "devDependencies": {
     "@bring-it/npm": "^0.9.0",
     "@nice-move/all-in-base": "^0.6.16",
+    "@types/unist": "^3.0.3",
     "ava": "^6.4.1",
     "eslint": "^9.36.0",
     "garou": "^0.9.15",
@@ -74,6 +76,11 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "ava": {
+    "extensions": [
+      "mts"
+    ]
   },
   "prettier": "@nice-move/prettier-config"
 }

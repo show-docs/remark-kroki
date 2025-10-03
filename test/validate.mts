@@ -1,8 +1,9 @@
 import test from 'ava';
+import type { ExecutionContext } from 'ava';
 
-import { transform } from './helper/lib.mjs';
+import { transform } from './helper/lib.mts';
 
-async function marco(t, ...configs) {
+async function marco(t: ExecutionContext, ...configs: object[]) {
   for (const config of configs) {
     const error = await t.throwsAsync(transform('', config), {
       instanceOf: TypeError,

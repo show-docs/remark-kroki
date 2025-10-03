@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { TransformSnapshot } from './helper/lib.mjs';
+import { TransformSnapshot } from './helper/lib.mts';
 
 test(
   'okay',

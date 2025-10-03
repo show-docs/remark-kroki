@@ -1,6 +1,7 @@
 import test from 'ava';
+import type { ExecutionContext } from 'ava';
 
-import { TransformSnapshot } from './helper/lib.mjs';
+import { TransformSnapshot } from './helper/lib.mts';
 
 test.before((t) => {
   t.timeout(1000 ** 3);
@@ -12,7 +13,7 @@ const source = `
 \`\`\`
 `;
 
-function macro(t, options) {
+function macro(t: ExecutionContext, options = {}) {
   return TransformSnapshot(t, source, {
     ...options,
     server: 'https://kroki.io',
