@@ -4,8 +4,7 @@
   "description": "Remark plugin for showing Kroki diagram",
   "license": "MIT",
   "author": {
-    "name": "Eric Chen",
-    "email": "airkro@qq.com"
+    "name": "Eric Chen"
   },
   "keywords": [
     "blockdiag",
@@ -31,7 +30,7 @@
   "homepage": "https://github.com/show-docs/remark-kroki",
   "repository": {
     "type": "git",
-    "url": "https://github.com/show-docs/remark-kroki.git"
+    "url": "git+https://github.com/show-docs/remark-kroki.git"
   },
   "bugs": {
     "url": "https://github.com/show-docs/remark-kroki/issues"
@@ -45,44 +44,36 @@
     "lint:staged": "nice-move lint staged",
     "prepare": "nice-move git hooks",
     "prepublishOnly": "pnpm run lint:staged && pnpm test",
-    "snapshot": "ava --fail-fast -u -w",
+    "snapshot": "ava --fail-fast -u",
     "test": "ava --fail-fast"
   },
   "dependencies": {
     "is-plain-obj": "^4.1.0",
-    "kebab-case": "^2.0.1",
+    "kebab-case": "^2.0.2",
     "markdown-code-block-meta": "^0.0.2",
     "node-fetch": "^3.3.2",
-    "p-memoize": "^7.1.1",
+    "p-memoize": "^8.0.0",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
-    "@bring-it/npm": "^0.5.5",
-    "@nice-move/cli": "^0.11.13",
-    "@nice-move/eslint-config-base": "^0.11.10",
-    "@nice-move/prettier-config": "^0.12.4",
-    "ava": "^6.1.3",
-    "eslint": "^8.57.0",
-    "eslint-plugin-ava": "^14.0.0",
-    "garou": "^0.7.6",
-    "prettier": "^3.3.2",
+    "@bring-it/npm": "^0.9.0",
+    "@nice-move/all-in-base": "^0.6.16",
+    "ava": "^6.4.1",
+    "eslint": "^9.36.0",
+    "garou": "^0.9.15",
+    "prettier": "^3.6.2",
     "remark": "^15.0.1",
-    "remark-mdx": "^3.0.1",
+    "remark-mdx": "^3.1.1",
+    "typescript": "^5.9.3",
     "unist-util-remove-position": "^5.0.0"
   },
-  "packageManager": "pnpm@9.4.0",
+  "packageManager": "pnpm@10.18.0",
   "engines": {
     "node": ">=18.0.0 || ^16.13.0"
   },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  },
-  "eslintConfig": {
-    "extends": "@nice-move/eslint-config-base"
-  },
-  "nice-move": {
-    "import-groups": "nice-move-preset"
   },
   "prettier": "@nice-move/prettier-config"
 }

@@ -1,5 +1,13 @@
-# Created by https://gitignore.io/api/node,windows
-# Edit at https://gitignore.io?templates=node,windows
+# Created by https://gitignore.io/api/ssh,certificates,node,windows
+# Edit at https://gitignore.io?templates=ssh,certificates,node,windows
+
+### certificates ###
+*.pem
+*.key
+*.crt
+*.cer
+*.der
+*.priv
 
 ### Node ###
 # Logs
@@ -141,6 +149,11 @@ dist
 # SvelteKit build / generate output
 .svelte-kit
 
+### SSH ###
+**/.ssh/id_*
+**/.ssh/*_id_*
+**/.ssh/known_hosts
+
 ### Windows ###
 # Windows thumbnail cache files
 Thumbs.db
@@ -167,4 +180,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://gitignore.io/api/node,windows
+# End of https://gitignore.io/api/ssh,certificates,node,windows
